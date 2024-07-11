@@ -74,9 +74,8 @@ export const IconButton = ({
     <span
       role={"button"}
       onClick={onClick}
-      className={`inline-block mr-2 hover:text-accent transition duration-300 ${className} ${
-        active ? "border-accent border rounded text-accent" : ""
-      }`}
+      className={`inline-block mr-2 hover:text-accent transition duration-300 ${className} ${active ? "border-accent border rounded text-accent" : ""
+        }`}
     >
       {icon}
     </span>
@@ -168,9 +167,8 @@ export const CollapseBox = ({
         onClick={() => {
           setIsOpen(!isOpen);
         }}
-        className={`cursor-pointer bg-secondary p-2 rounded ${
-          isOpen ? "rounded-b-none " : " "
-        }"}`}
+        className={`cursor-pointer bg-secondary p-2 rounded ${isOpen ? "rounded-b-none " : " "
+          }"}`}
       >
         {isOpen && <ChevronUpIcon className={chevronClass} />}
         {!isOpen && <ChevronDownIcon className={chevronClass} />}
@@ -620,9 +618,8 @@ export const ImageLoader = ({
       <img
         alt="Dynamic content"
         src={src}
-        className={`w-full  rounded ${
-          isLoading ? "opacity-0" : "opacity-100"
-        } ${className}`}
+        className={`w-full  rounded ${isLoading ? "opacity-0" : "opacity-100"
+          } ${className}`}
         onLoad={() => setIsLoading(false)}
       />
     </div>

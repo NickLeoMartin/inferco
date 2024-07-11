@@ -18,7 +18,7 @@ const config: GatsbyConfig = {
   siteMetadata: {
     title: `Inferco [Beta]`,
     description: `Multi-Agent Product Analyst Apps`,
-    siteUrl: `http://example.com`,
+    siteUrl: `https://github.com/NickLeoMartin/inferco`,
   },
   flags: {
     LAZY_IMAGES: true,
@@ -30,12 +30,12 @@ const config: GatsbyConfig = {
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-postcss",
-    // {
-    //   resolve: "gatsby-plugin-manifest",
-    //   options: {
-    //     icon: "src/images/icon.png",
-    //   },
-    // },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        icon: "src/images/icon.svg",
+      },
+    },
     "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",

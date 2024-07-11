@@ -1,53 +1,101 @@
+<div align="center">
+
+<img width="100px" src="docs/icon-inferco.png" />
+
 # Inferco
 
-![Playground](./docs/inferco-playground.png)
+### An AI Product Analyst Assistant App
 
-Inferco is an app for builders to understand how customers use their product. Engineers, PMs & analysts struggle every day to answer important questions with the data in their tools & systems - jeopardizing their success. Ultimately, there are massive gains in productivity to be made here.
+<p>
+<img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/NickLeoMartin/inferco" />
+<img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/NickLeoMartin/inferco" />
+<img alt="" src="https://img.shields.io/github/repo-size/NickLeoMartin/inferco" />
+<img alt="GitHub Issues" src="https://img.shields.io/github/issues/NickLeoMartin/inferco" />
+<img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr/NickLeoMartin/inferco" />
+<img alt="GitHub License" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+</p>
 
-> "What if... every employee can think up and answer business questions immediately? Instead of waiting for the BI analyst to get back to them next week. 
+</div>
 
-> "What if... creating a customer retention analysis segmented by payment plan was as simple as writing a message to a Slack bot?"
+-----
 
-Then everyone is closer to the truth & the velocity of informed decision-making increases.
+<p align="center">
+  <a href="#-demo">Demo</a> •
+  <a href="#-use-cases">Use cases</a> •
+  <a href="#-features">Features</a> •
+  <a href="#-installation" target="_blank">Installation</a> •
+  <a href="#-tutorial" target="_blank">Tutorial</a> •
+  <a href="#-contributions" target="_blank">Contributions</a>
+</p>
 
-> **Note**: This is meant to help you rapidly prototype multi-agent workflows and demonstrate an example of end user interfaces built with [AutoGen](https://microsoft.github.io/autogen) and has borrowed liberally from the Autogen Studio project. It is not meant to be a production-ready app.
+-----
 
+Inferco enables any developer to use powerful AI assistants to know how customers use their applications. These assistants use large language models (LLMs), data sources and a local machine to write & execute complex data analysis in minutes.
 
-### Project Structure:
+> [!WARNING]
+> **Note**: Currently, this is meant to help you rapidly prototype multi-agent workflows and demonstrate an example of end user interfaces built with [AutoGen](https://microsoft.github.io/autogen) and forked the Autogen Studio project - which is awesome but lacks security features, data sources etc. If you like this, check Autogen out. It is not meant to be a production-ready app.
 
-- _inferco/_ code for the backend classes and web api (FastAPI)
-- _frontend/_ code for the webui, built with Gatsby and TailwindCSS
+-----
 
-### Installation
+## 🎥 Demo (TBD)
 
-Currently, only installation from source is supported.
+![Playground](./docs/demo-playground.png)
 
-**Install from Source**
+## ✨ Use cases
 
-    > Note: This approach requires some familiarity with building interfaces in React.
+Inferco lets you author specialist AI workflows to accomplish any product analysis you want, including:
 
-    If you prefer to install from source, ensure you have Python 3.10+ and Node.js (version above 14.15.0) installed. Here's how you get started:
+- Product KPIs
+- Acquisition drivers
+- User engagement
+- Feature adoption & retention
+- Marketing analytics
+- Monetization drivers
+- Qualitative analysis of user research / surveys / feedback rivers
 
-    - Clone the Inferco repository, create a python virtual environment & install its Python dependencies:
+## 👀 Features
 
-      ```bash
-      python3 -m venv .venv
-      source .venv/bin/activate
-      ```
+Covered:
+- SOTA open & closed Source models
+- Data Sources: PostgreSQL
+- Local code execution in virtual environment or Docker
+- Multi-agent workflows
+- Function calling for supported models
+- Agent-driven error correction
 
-      ```bash
-      pip install -e .
-      ```
+Next up:
+- Secure credential management (nothing shared with third-parties)
+- Data Sources: files, APIs & more databases
+- Selectively append database table definitons to prompt
+- Web browsing
+- 3-5 agent groupchat workflow
 
-    - Navigate to the `samples/apps/inferco/frontend` directory, install dependencies, and build the UI:
+## 📋 Installation
 
-      ```bash
-      npm install -g gatsby-cli
-      npm install --global yarn
-      cd frontend
-      yarn install
-      yarn build
-      ```
+Currently, only installation from source is supported. A PyPi package will follow, if there is demand.
+
+### Install from Source
+
+> Note: This approach requires some familiarity with building interfaces in React.
+
+If you prefer to install from source, ensure you have Python 3.10+ and Node.js (version above 14.15.0) installed. Here's how you get started:
+
+Clone the Inferco repository, create a python virtual environment & install its Python dependencies:
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e .
+```
+
+Navigate to the `frontend` directory, install dependencies, and build the UI:
+
+```bash
+npm install -g gatsby-cli
+npm install --global yarn
+cd frontend
+yarn install
+yarn build
+```
 
 For Windows users, to build the frontend, you may need alternative commands to build the frontend.
 
@@ -97,7 +145,7 @@ The "Data Engineer" Workflow consists of 2 agents: a Data Engineer Agent & a Use
 
 To use this workflow, navigate to "Playground" tab and create a new chat session. When prompting, there is an option to specify a pre-configured Data Source connection that the model will use to when it requires credentials.
 
-### Tutorial
+## 🧐 Tutorial
 
 1. Run the following docker container with a local PostgreSQL database instance:
 ```bash
@@ -109,27 +157,27 @@ docker run -d -p 5432:5432 ghusta/postgres-world-db:2.11
 Ping the postgres database to check if we can connect. Then get the postgres database schema using the function call. Use the following credentials: username: world password: world123 host: 127.0.0.1 port: 5432 db-name: world-db
 ```
 
-![1st Prompt](docs/1st%20prompt.png)
+![1st Prompt](docs/tutorial/1st%20prompt.png)
 
 4. 2nd prompt:
 ```txt
 Query the database to make a bar graph of the top 10 countries by population in Africa. Save this bar graph
 ```
 
-![2nd Prompt](docs/2nd%20prompt.png)
+![2nd Prompt](docs/tutorial/2nd%20prompt.png)
 
 5. 3rd prompt: 
 ```txt
 Query the database and write a linear regression model to predict a countries population given gnp, surface_area, indep_year & life_expectancy. Report the model weights and interpret them.
 ```
 
-![3rd Prompt](docs/3rd%20prompt.png)
+![3rd Prompt](docs/tutorial/3rd%20prompt.png)
 
 6. 4th prompt:
 ```txt
 Query the database to find the correlation between population and life expectancy. Create a scatter plot of countries and save it.
 ```
-![4th Prompt](docs/4th%20prompt.png)
+![4th Prompt](docs/tutorial/4th%20prompt.png)
 
 ### Extra Credit
 
@@ -144,3 +192,10 @@ To add a skill:
 
 ![Postgres Data Source](docs/postgres-data-source.png)
 
+## 🫶 Contributions:
+
+Inferco is an open-source project, and contributions are welcome. If you want to contribute, you can create new features, fix bugs, or improve the infrastructure.
+
+<a href="https://github.com/nickleomartin/inferco/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=nickleomartin/inferco" />
+</a>
