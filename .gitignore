@@ -1,0 +1,28 @@
+database.sqlite
+.cache/*
+inferco/web/files/user/*
+inferco/test
+inferco/web/files/ui/*
+OAI_CONFIG_LIST
+scratch/
+inferco/web/workdir/*
+inferco/web/ui/*
+inferco/web/skills/user/*
+.release.sh
+inferco.egg-info/
+frontend/node_modules
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.test/

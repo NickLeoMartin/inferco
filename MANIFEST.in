@@ -1,0 +1,7 @@
+recursive-include  inferco/web/ui *
+recursive-include  inferco/web/database.sqlite
+recursive-exclude  notebooks *
+
+recursive-exclude  frontend *
+recursive-exclude  docs *
+recursive-exclude  tests *
